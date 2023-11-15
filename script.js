@@ -48,20 +48,24 @@ $(document).ready(function () {
     }
 
     $('#start-pause-btn').click(function () {
-        if (!isRunning) {
-            let minutes = parseInt($('#minutes').val()) || 0;
-            let seconds = parseInt($('#seconds').val()) || 0;
-            let totalMilliseconds = (minutes * 60 + seconds) * 1000;
+        let minutes = parseInt($('#minutes').val()) || 0;
+    let seconds = parseInt($('#seconds').val()) || 0;
+    let totalMilliseconds = (minutes * 60 + seconds) * 1000;
 
-            if (totalMilliseconds > 0) {
-                if (timerDuration === undefined || timerDuration <= 0) {
-                    timerDuration = totalMilliseconds;
-                }
-                startTimer(timerDuration);
+    if (totalMilliseconds > 0) {
+        if (!isRunning) {
+            // Increment the counter only when the timer starts
+            count++;
+            $('#count-display').text(`Count: ${count}`);
+            
+            if (timerDuration === undefined || timerDuration <= 0) {
+                timerDuration = totalMilliseconds;
             }
+            startTimer(timerDuration);
         } else {
             pauseTimer();
         }
+    }
     });
 
     $('#reset-btn').click(function () {
