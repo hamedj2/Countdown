@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="timer-container">
+        <div id="timer-display">00:00:00</div>
+        <div id="count-display">Count: 0</div>
+
+        <div class="controls">
+            <button id="start-pause-btn">Start/Pause</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+        <div class="settings">
+            <div class="time-input">
+        <button class="btn-decrement">-</button>
+        <input type="number" id="minutes" placeholder="Minutes">
+        <button class="btn-increment">+</button>
+    </div>
+    <div class="time-input">
+        <button class="btn-decrement">-</button>
+        <input type="number" id="seconds" placeholder="Seconds">
+        <button class="btn-increment">+</button>
+    </div>
+    <div class="shortcut-buttons">
+        <button class="shortcut" data-minutes="0" data-seconds="5">5 sec</button>
+        <button class="shortcut" data-minutes="0" data-seconds="30">30 sec</button>
+        <button class="shortcut" data-minutes="1" data-seconds="0">1 min</button>
+    </div>
+            
+        </div>
+
+        <div id="error-message" style="color: red;"></div>
+        <div class="theme-switch">
+            <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider round">
+                    <i class="fas fa-sun"></i> <!-- Sun icon -->
+                    <i class="fas fa-moon"></i> <!-- Moon icon -->
+                </span>
+            </label>
+        </div>
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
