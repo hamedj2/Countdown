@@ -35,10 +35,16 @@ $(document).ready(function () {
     }
 
     function playSound() {
-        // Check if the sound is allowed to play
+        console.log("Attempting to play sound"); // Debugging log
         if (typeof Audio !== "undefined") {
-            var audio = new Audio('alarm.wav'); // Make sure the path is correct
-            audio.play().catch(e => console.log('Audio playback failed: ' + e));
+            var audio = new Audio('alarm.wav');
+            audio.play().then(() => {
+                console.log("Sound played successfully");
+            }).catch(e => {
+                console.error('Audio playback failed: ' + e);
+            });
+        } else {
+            console.error("Audio playback not supported");
         }
     }
 
